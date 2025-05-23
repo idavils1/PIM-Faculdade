@@ -1,0 +1,78 @@
+!DOCTYPE html
+html lang=pt-br
+head
+    meta charset=UTF-8
+    meta name=viewport content=width=device-width, initial-scale=1.0
+    titleDevs Academy - Hometitle
+    link href=httpsunpkg.comboxicons@2.1.4cssboxicons.min.css rel=stylesheet
+    link rel=stylesheet href=estilo.css
+head
+body
+    div class=container
+        !-- Sidebar --
+        aside class=sidebar
+            h2Suporteh2
+            
+            div class=suporte-item
+                h3Horário de Atendimentoh3
+                pSeg-Sex 8h às 22hp
+            div
+            
+            div class=suporte-item
+                h3Contatoh3
+                psuporte@devsacademy.comp
+                p(11) 1234-5678p
+            div
+            
+            div class=suporte-item
+                h3FAQh3
+                pPerguntas frequentesp
+            div
+            
+            div class=chatbot
+                h3DevBoth3
+                pComo posso te ajudarp
+                input type=text placeholder=Digite sua dúvida...
+                buttonEnviarbutton
+            div
+        aside
+        
+        !-- Main Content --
+        main class=main-content
+            header class=header
+                h1Devs Academyh1
+                
+                div class=calendario
+                    h2Outubro 2023h2
+                    div class=dias-semana
+                        divDdivdivSdivdivTdivdivQdivdivQdivdivSdivdivSdiv
+                    div
+                    div class=dias-calendario
+                        div25divdiv26divdiv27divdiv28divdiv29divdiv30divdiv1div
+                        div2divdiv3divdiv4divdiv class=dia-atual5divdiv6divdiv7divdiv8div
+                        div9divdiv10divdiv11divdiv12divdiv13divdiv14divdiv15div
+                        div16divdiv17divdiv18divdiv19divdiv20divdiv21divdiv22div
+                        div23divdiv24divdiv25divdiv26divdiv27divdiv28divdiv29div
+                    div
+                div
+            header
+            
+            section class=cursos
+                article class=curso-card
+                    h2Python Inícioh2
+                    pAprenda os fundamentos da linguagem Python, desde a instalação até a criação de seus primeiros programas.p
+                    a href=python.html class=btn-cursoComeçara
+                article
+                
+                article class=curso-card
+                    h2Lógica de Programação Básicoh2
+                    pDomine os conceitos fundamentais da programação que são aplicáveis a qualquer linguagem.p
+                    a href=logica.html class=btn-cursoComeçara
+                article
+            section
+        main
+    div
+    
+    script src=jsscript.jsscript
+body
+html

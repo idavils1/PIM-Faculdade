@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devs Academy - Python</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Suporte</h2>
+            <!-- Mesmo sidebar da home -->
+        </aside>
+        
+        <main class="main-content">
+            <header class="header">
+                <h1>Devs Academy</h1>
+                <a href="../index.html" class="btn-curso">Voltar</a>
+            </header>
+            
+            <section class="curso-header">
+                <h1>Python: Início</h1>
+                <p>Domine os fundamentos da linguagem Python com este curso completo para iniciantes.</p>
+            </section>
+            
+            <section class="modulos">
+                <article class="modulo">
+                    <h2>Módulo 1: Introdução ao Python</h2>
+                    <p>Conheça a história da linguagem, ambiente de desenvolvimento e primeiro programa.</p>
+                </article>
+                
+                <article class="modulo">
+                    <h2>Módulo 2: Variáveis e Tipos de Dados</h2>
+                    <p>Aprenda sobre strings, números, booleanos e estruturas básicas de dados.</p>
+                </article>
+                
+                <article class="modulo">
+                    <h2>Módulo 3: Estruturas de Controle</h2>
+                    <p>Condicionais (if/else) e loops (for/while) para controlar o fluxo do programa.</p>
+                </article>
+                
+                <article class="modulo">
+                    <h2>Módulo 4: Funções</h2>
+                    <p>Crie e utilize funções para organizar e reutilizar seu código.</p>
+                </article>
+            </section>
+        </main>
+    </div>
+    
+    <script src="../js/script.js"></script>
+</body>
+</html>

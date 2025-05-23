@@ -1,0 +1,18 @@
+document.addEventListener('DOMContentLoaded', function() {
+    const chatbotBtn = document.querySelector('.chatbot button');
+    if (chatbotBtn) {
+        chatbotBtn.addEventListener('click', function() {
+            alert('Mensagem enviada! Nosso suporte entrará em contato em breve.');
+        });
+    }
+
+    const hoje = new Date();
+    const diaAtual = hoje.getDate();
+    
+    const diasCalendario = document.querySelectorAll('.dias-calendario div');
+    diasCalendario.forEach(dia => {
+        if (parseInt(dia.textContent) === diaAtual) {
+            dia.classList.add('dia-atual');
+        }
+    });
+});

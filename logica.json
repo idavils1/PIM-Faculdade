@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Devs Academy - Lógica</title>
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Suporte</h2>
+            <!-- Mesmo sidebar da home -->
+        </aside>
+        
+        <main class="main-content">
+            <header class="header">
+                <h1>Devs Academy</h1>
+                <a href="../index.html" class="btn-curso">Voltar</a>
+            </header>
+            
+            <section class="curso-header">
+                <h1>Lógica de Programação: Básico</h1>
+                <p>Fundamentos essenciais para começar sua jornada na programação.</p>
+            </section>
+            
+            <section class="modulos">
+                <article class="modulo">
+                    <h2>Módulo 1: Conceitos Básicos</h2>
+                    <p>Algoritmos, pseudocódigo e fluxogramas - a base do pensamento computacional.</p>
+                </article>
+                
+                <article class="modulo">
+                    <h2>Módulo 2: Variáveis e Operadores</h2>
+                    <p>Armazenamento de dados e operações matemáticas e lógicas.</p>
+                </article>
+                
+                <article class="modulo">
+                    <h2>Módulo 3: Estruturas de Controle</h2>
+                    <p>Tomada de decisões e repetições - if/else e loops.</p>
+                </article>
+                
+                <article class="modulo">
+                    <h2>Módulo 4: Estruturas de Dados</h2>
+                    <p>Vetores, matrizes e registros - organizando informações.</p>
+                </article>
+            </section>
+        </main>
+    </div>
+    
+    <script src="../js/script.js"></script>
+</body>
+</html>
