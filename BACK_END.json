@@ -1,0 +1,85 @@
+from flask import Flask, render_template, request, jsonify
+from datetime import datetime
+import os
+
+app = Flask(__name__)
+
+# Configurações
+app.config['SECRET_KEY'] = 'devsacademy_secret_key_123'
+
+# Dados dos cursos (simulando um banco de dados)
+CURSOS = {
+    'python': {
+        'titulo': 'Python: Início',
+        'descricao': 'Aprenda os fundamentos da linguagem Python, desde a instalação até a criação de seus primeiros programas.',
+        'modulos': [
+            {'titulo': 'Introdução ao Python', 'conteudo': 'História da linguagem, ambiente de desenvolvimento e primeiro programa.'},
+            {'titulo': 'Variáveis e Tipos de Dados', 'conteudo': 'Strings, números, booleanos e estruturas básicas de dados.'},
+            {'titulo': 'Estruturas de Controle', 'conteudo': 'Condicionais (if/else) e loops (for/while).'},
+            {'titulo': 'Funções', 'conteudo': 'Criação e utilização de funções para organizar e reutilizar código.'}
+        ]
+    },
+    'logica': {
+        'titulo': 'Lógica de Programação: Básico',
+        'descricao': 'Domine os conceitos fundamentais da programação que são aplicáveis a qualquer linguagem.',
+        'modulos': [
+            {'titulo': 'Conceitos Básicos', 'conteudo': 'Algoritmos, pseudocódigo e fluxogramas.'},
+            {'titulo': 'Variáveis e Operadores', 'conteudo': 'Armazenamento de dados e operações matemáticas e lógicas.'},
+            {'titulo': 'Estruturas de Controle', 'conteudo': 'Tomada de decisões e repetições - if/else e loops.'},
+            {'titulo': 'Estruturas de Dados', 'conteudo': 'Vetores, matrizes e registros.'}
+        ]
+    }
+}
+
+# Rota principal
+@app.route('/')
+def home():
+    # Gerar dados do calendário
+    hoje = datetime.now()
+    mes_atual = hoje.month
+    ano_atual = hoje.year
+    
+    return render_template('index.html', 
+                         dia_atual=hoje.day,
+                         mes_atual=mes_atual,
+                         ano_atual=ano_atual)
+
+# Rota para os cursos
+@app.route('/curso/<nome_curso>')
+def curso(nome_curso):
+    if nome_curso in CURSOS:
+        return render_template(f'{nome_curso}.html', 
+                            curso=CURSOS[nome_curso])
+    else:
+        return render_template('404.html'), 404
+
+# API para o chatbot
+@app.route('/api/chatbot', methods=['POST'])
+def chatbot():
+    mensagem = request.form.get('mensagem', '').lower()
+    
+    # Respostas pré-definidas
+    respostas = {
+        'horario': 'Nosso atendimento é de Segunda a Sexta, das 8h às 22h.',
+        'contato': 'Você pode nos contatar em suporte@devsacademy.com ou (11) 1234-5678.',
+        'curso': 'Temos cursos de Python e Lógica de Programação. Qual você gostaria de saber mais?',
+        'python': 'O curso de Python aborda desde conceitos básicos até funções avançadas.',
+        'lógica': 'O curso de Lógica ensina os fundamentos essenciais para programação.'
+    }
+    
+    # Verificar palavras-chave
+    resposta = "Desculpe, não entendi. Poderia reformular sua pergunta?"
+    for palavra in respostas:
+        if palavra in mensagem:
+            resposta = respostas[palavra]
+            break
+    
+    return jsonify({'resposta': resposta})
+
+# Página 404 personalizada
+@app.errorhandler(404)
+def pagina_nao_encontrada(e):
+    return render_template('404.html'), 404
+
+if __name__ == '__main__':
+    app.run(debug=True)
